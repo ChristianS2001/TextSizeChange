@@ -8,7 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import org.w3c.dom.Text
 
-class MainActivity : AppCompatActivity(), SizeFragment.ValueChangeInterface {
+class MainActivity : AppCompatActivity(), SizeFragment {
+
 
     lateinit var textFragment: TextFragment
 
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), SizeFragment.ValueChangeInterface {
 
     }
 
+    //instead of using this interface we take what data we get from a viewmodel created and use that to make changes instead
     override fun onChange(value: Int) {
         // Change text size
         textFragment.changeTextSize(value.toFloat())
